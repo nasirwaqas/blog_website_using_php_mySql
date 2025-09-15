@@ -82,7 +82,7 @@ if (isset($_POST['delete'])) {
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="profile.php">Profile</a>
+                        <a class="dropdown-item" href="user_data.php">Profile</a>
                         <a class="dropdown-item" href="edit_profile.php">Edit Profile</a>
                         <a class="dropdown-item" href="add_post.php">Add Post</a>
                         <div class="dropdown-divider"></div>
