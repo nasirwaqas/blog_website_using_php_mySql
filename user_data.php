@@ -61,24 +61,24 @@ if (!$result) {
 
             <span class="navbar-text d-flex align-items-center">
                 <div class="dropdown">
-    <a class="d-flex align-items-center" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false" style="text-decoration:none;">
-        <?php echo "Welcome " . $_SESSION['username']; ?>
-        <span class="user-icon ml-2" id="user-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                class="bi bi-person-fill" viewBox="0 0 16 16">
-                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-            </svg>
-        </span>
-    </a>
-    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-        <a class="dropdown-item" href="user_data.php">Profile</a>
-        <a class="dropdown-item" href="edit_profile.php">Edit Profile</a>
-        <a class="dropdown-item" href="add_post.php">Add Post</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="logout.php">Logout</a>
-    </div>
-</div>
+                    <a class="d-flex align-items-center" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" style="text-decoration:none;">
+                        <?php echo "Welcome " . $_SESSION['username']; ?>
+                        <span class="user-icon ml-2" id="user-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-person-fill" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                            </svg>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="user_data.php">Profile</a>
+                        <a class="dropdown-item" href="edit_profile.php">Edit Profile</a>
+                        <a class="dropdown-item" href="add_post.php">Add Post</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="logout.php">Logout</a>
+                    </div>
+                </div>
 
             </span>
         </div>
@@ -95,15 +95,15 @@ if (!$result) {
             </div>
         </div>
     </div>
-         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-</body >
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
 
-</html >
+</html>

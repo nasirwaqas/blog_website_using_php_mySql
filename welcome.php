@@ -10,7 +10,7 @@ $post = [];
 $search_query = ''; // Initialize search query
 
 $limit = 6; // Number of posts per page
-$current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$current_page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 $current_page = max(1, $current_page); // Ensure current page is at least 1
 $offset = ($current_page - 1) * $limit; // Calculate the offset
 
@@ -62,8 +62,10 @@ if (isset($_POST['delete'])) {
                 </li>
             </ul>
 
-            <form class="form-inline d-flex align-items-center " method="get" action="welcome.php" style="margin: 0 auto">
-                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search" value="<?php echo htmlspecialchars($search_query); ?>">
+            <form class="form-inline d-flex align-items-center " method="get" action="welcome.php"
+                style="margin: 0 auto">
+                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search"
+                    value="<?php echo htmlspecialchars($search_query); ?>">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
 
@@ -107,7 +109,8 @@ if (isset($_POST['delete'])) {
                                     data-id="<?php echo $row['id']; ?>">Edit</button>
                                 <form method="post" style="display:inline;">
                                     <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                                    <button type="submit" name="delete" class="btn btn-warning btn-sm me-md-2 remove-btn mx-0"
+                                    <button type="submit" name="delete"
+                                        class="btn btn-warning btn-sm me-md-2 remove-btn mx-0"
                                         onclick="return confirm('Are you sure you want to delete this post?');">Delete</button>
                                 </form>
                             </div>
@@ -116,44 +119,44 @@ if (isset($_POST['delete'])) {
                 </div>
             <?php } ?>
         </div>
-        
+
     </div>
-    <?php 
-        $sql1 = "SELECT COUNT(*) as total FROM post";
-        $result1 = mysqli_query($conn, $sql1);
-        if ($result1 && $row = mysqli_fetch_assoc($result1)) {
-            $total_records = $row['total'];
-           
-            $total_pages = ceil($total_records / $limit);
+    <?php
+    $sql1 = "SELECT COUNT(*) as total FROM post";
+    $result1 = mysqli_query($conn, $sql1);
+    if ($result1 && $row = mysqli_fetch_assoc($result1)) {
+        $total_records = $row['total'];
 
-            $current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-            $current_page = max(1, min($current_page, $total_pages)); // Ensure current page is within range
+        $total_pages = ceil($total_records / $limit);
 
-            echo "<nav aria-label='Page navigation example'>";
-            echo "<ul class='pagination justify-content-center'>";
-            // Previous button
-            if ($current_page > 1) {
-                echo "<li class='page-item'><a class='page-link' href='welcome.php?page=" . ($current_page - 1) . "'>Previous</a></li>";
-            } else {
-                echo "<li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>";
-            }
-            // Page number
-            for ($i = 1; $i <= $total_pages; $i++) {
-                if ($i == $current_page) {
-                    echo "<li class='page-item active'><a class='page-link' href='#'>$i</a></li>";
-                } else {
-                    echo "<li class='page-item'><a class='page-link' href='welcome.php?page=$i'>$i</a></li>";
-                }
-            }
-            // Next button
-            if ($current_page < $total_pages) {
-                echo "<li class='page-item'><a class='page-link' href='welcome.php?page=" . ($current_page + 1) . "'>Next</a></li>";
-            } else {
-                echo "<li class='page-item disabled'><a class='page-link' href='#'>Next</a></li>";
-            }
-            echo "</ul>";
-            echo "</nav>";
+        $current_page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+        $current_page = max(1, min($current_page, $total_pages)); // Ensure current page is within range
+    
+        echo "<nav aria-label='Page navigation example'>";
+        echo "<ul class='pagination justify-content-center'>";
+        // Previous button
+        if ($current_page > 1) {
+            echo "<li class='page-item'><a class='page-link' href='welcome.php?page=" . ($current_page - 1) . "'>Previous</a></li>";
+        } else {
+            echo "<li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>";
         }
+        // Page number
+        for ($i = 1; $i <= $total_pages; $i++) {
+            if ($i == $current_page) {
+                echo "<li class='page-item active'><a class='page-link' href='#'>$i</a></li>";
+            } else {
+                echo "<li class='page-item'><a class='page-link' href='welcome.php?page=$i'>$i</a></li>";
+            }
+        }
+        // Next button
+        if ($current_page < $total_pages) {
+            echo "<li class='page-item'><a class='page-link' href='welcome.php?page=" . ($current_page + 1) . "'>Next</a></li>";
+        } else {
+            echo "<li class='page-item disabled'><a class='page-link' href='#'>Next</a></li>";
+        }
+        echo "</ul>";
+        echo "</nav>";
+    }
     ?>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

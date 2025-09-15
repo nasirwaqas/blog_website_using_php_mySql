@@ -31,16 +31,20 @@ if (isset($_POST['delete'])) {
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Post Details</title>
 </head>
+
 <body>
- <img class="card-img-top" src="uploads/<?php echo $post['image']; ?>" alt="Product image">
+    <img class="card-img-top" src="uploads/<?php echo $post['image']; ?>" alt="Product image">
     <p><?php echo htmlspecialchars($post['discription']); ?></p>
     <form method="post" style="display:inline;">
-        <button type="submit" name="delete" onclick="return confirm('Are you sure you want to delete this post?');">Remove</button>
+        <button type="submit" name="delete"
+            onclick="return confirm('Are you sure you want to delete this post?');">Remove</button>
     </form>
     <a href="edit_post.php?id=<?php echo $post_id; ?>"><button>Edit</button></a>
     <a href="welcome.php"><button>Back</button></a>
 </body>
+
 </html>

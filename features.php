@@ -11,7 +11,7 @@ $post = [];
 $search_query = ''; // Initialize search query
 
 $limit = 6; // Number of posts per page
-$current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$current_page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 $current_page = max(1, $current_page); // Ensure current page is at least 1
 $offset = ($current_page - 1) * $limit; // Calculate the offset
 
@@ -64,8 +64,10 @@ if (isset($_POST['delete'])) {
                 </li>
             </ul>
 
-            <form class="form-inline d-flex align-items-center " method="get" action="features.php" style="margin: 0 auto">
-                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search" value="<?php echo htmlspecialchars($search_query); ?>">
+            <form class="form-inline d-flex align-items-center " method="get" action="features.php"
+                style="margin: 0 auto">
+                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search"
+                    value="<?php echo htmlspecialchars($search_query); ?>">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
 
@@ -109,7 +111,8 @@ if (isset($_POST['delete'])) {
                                     data-id="<?php echo $row['id']; ?>">Edit</button>
                                 <form method="post" style="display:inline;">
                                     <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                                    <button type="submit" name="delete" class="btn btn-warning btn-sm me-md-2 remove-btn mx-0"
+                                    <button type="submit" name="delete"
+                                        class="btn btn-warning btn-sm me-md-2 remove-btn mx-0"
                                         onclick="return confirm('Are you sure you want to delete this post?');">Delete</button>
                                 </form>
                             </div>
